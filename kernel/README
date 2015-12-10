@@ -1,0 +1,235 @@
+
+
+
+                  ,----------------------------------------.
+                  |                                        |
+                  |   The Plural Operating System Kernel   |
+                  |                                        |
+                  |----------------------------------------|
+                  |                                        |
+                  |             Version 0.0.x              |
+                  |                                        |
+                  `----------------------------------------'
+
+
+
+
+Table Of Contents
+-----------------
+
+1. Introduction
+2. Distribution
+3. Patches
+4. Configuring the kernel
+5. Compiling the kernel
+6. Installation
+ 6.1 GRUB
+ 6.2 Creating a boot floppy
+ 6.3 Creating a floppy image
+  6.3.1 Using a floppy disk
+  6.3.2 Using a loopback device
+ 6.4 Bochs
+ 6.5 Installing on a hard drive
+7. Hardware requirements
+8. Software requirements
+9. Reporting bugs
+
+
+
+,-----------------.
+| 1. Introduction |
+`-----------------'
+
+      Plural is a 32-bit Multitasking, operating systems designed for IA32
+   systems.  It is being developed to comform with the X/Open Single Unix
+   Specifications, Version 3.0.  Plural is distributed under the GNU General
+   Public License Version 2.0.  Please see the file COPYING included with this
+   package for more details.  Volume 1 of the manual.
+
+,-----------------.
+| 2. Distribution |
+`-----------------'
+
+      The Plural packages are available from <http://www.plural-os.org> which
+   is hosted by sourceforge.net.  This package, the kernel, is available as
+   'kernel-XX.YY.ZZ.tar.bz2' where XX.YY.ZZ is the version number.  You can
+   also download patches to reduce download time.
+
+,------------.
+| 3. Patches |
+`------------'
+
+      Patches are distributed as 'kernel-XX.YY.ZZ.diff.bz2' where XX.YY.ZZ is
+   the version number that you want to upgrade to.  The patches created against
+   the previous version of the kernel, for example, if you had kernel-0.0.13
+   and you want to upgrade to kernel-0.0.14, you would need to download the
+   patch file 'kernel-0.0.14.diff.bz2'.  If you had kernel-0.0.12 however, you
+   would need to download 'kernel-0.0.13.diff.bz2' as well.
+
+   Here is an example of installing the source code and applying patches...
+
+   $ ls
+   kernel-0.0.12.tar.bz2
+   kernel-0.0.13.diff.bz2
+   kernel-0.0.14.diff.bz2
+   $ bunzip2 kernel-0.0.12.tar.bz2
+   $ tar xf kernel-0.0.12.tar
+   $ ls
+   kernel/
+   kernel-0.0.12.tar
+   kernel-0.0.13.diff.bz2
+   kernel-0.0.14.diff.bz2
+   $ bunzip2 kernel-0.0.13.diff.bz2 kernel-0.0.14.diff.bz2
+   $ patch -p0 < kernel-0.0.13.diff
+   $ patch -p0 < kernel-0.0.14.diff
+
+   At this point, the kernel source should be updated to kernel version
+   0.0.14.  Also note that patches must be applied in order for them to
+   work correctly.  If for some reason you wanted to remove a patch,
+   you can do so with the following command...
+
+   $ patch -p0 -R < kernel-0.0.14.diff
+   
+   Now we would have kernel-0.0.13 source code in the kernel/ directory.
+   If you are familiar with compiling the Linux kernel and applying patches
+   then you will find this to be very similiar.
+
+,---------------------------.
+| 4. Configuring the kernel |
+`---------------------------'
+
+      'make config'
+
+      Before you can compile the kernel, it needs to be configured.
+   The kernel includes a program like the one included with the Linux
+   kernel for 'make menuconfig' this program requires you have ncurses
+   installed on the system.  To configure the kernel you need to do a
+   'make config'.
+
+      'make dep'
+
+      After you have configured the kernel, dependencies must be
+   created.  You can do this by doing a 'make dep'.  This creates a
+   .depend file to be created in each directory.
+
+,------------------------.
+| 5. Compling the kernel |
+`------------------------'
+
+      'make'
+
+      Typing 'make' will build the kernel and output a file called
+   'plural.o' This is the kernel image.
+
+,-----------------.
+| 6. Installation |
+`-----------------'
+
+      There are several installation methods available.  However, all
+    require GRUB to boot.  The top 'Makefile' will install the kernel
+    to the directory /floppy.  This is the directory that I use on my
+    home system as a loopback device emulating a 1.44Mb floppy under
+    Bochs.  Change this as you see fit.
+
+      'make install'
+   
+      This will create install the kernel to the /floppy directory.
+    Change this in 'Makefile' to whatever you need.  For example
+    /mnt/floppy if you are installing onto a real floppy disk.
+
+,----------.
+| 6.1 GRUB |
+`----------'
+
+      Plural depends on GRUB to boot the kernel.
+
+,----------------------------.
+| 6.2 Creating a boot floppy |
+`----------------------------'
+
+       More info later...
+
+,-----------------------------.
+| 6.3 Creating a floppy image |
+`-----------------------------'
+
+      To create a floppy image issue the following command:
+
+        $ dd if=/dev/zero of=/floppy0 bs=1024 count=1440
+
+    This will create a 1.44Mb file that you can use with a loopback
+    device to install GRUB and the Plural kernel.
+
+       $ losetup /dev/loop0 /floppy0
+       $ mount /dev/loop0 /floppy
+       $ mkdir /floppy/grub
+       $ cp /usr/share/grub/i386-pc/* /floppy/grub
+       $ dd if=/floppy/grub/stage1 of=/dev/loop0 bs=512 count=1
+       $ grub
+
+       > device (fd0) /dev/loop0
+       > setup (fd0)
+       > quit
+
+,---------------------------.
+| 6.3.1 Using a floppy disk |
+`---------------------------'
+
+      More info later...
+
+,-------------------------------.
+| 6.3.2 Using a loopback device |
+`-------------------------------'
+
+      $ losetup /dev/loop0 /floppy.img
+      $ mount /dev/loop0 /mnt/plural
+
+,-----------.
+| 6.4 Bochs |
+`-----------'
+
+      Bochs can be used to try out the kernel and is useful for development as
+   well.
+
+,--------------------------------.
+| 6.5 Installing on a hard drive |
+`--------------------------------'
+
+      More info later...
+
+,--------------------------.
+| 7. Hardware requirements |
+`--------------------------'
+
+      More info later...
+
+,--------------------------.
+| 8. Software requirements |
+`--------------------------'
+
+      At present a GNU/Linux system is required to build the kernel.  Most any
+   GNU/Linux system, regardless of distribution should work fine.  Here is a
+   list of software required to build the kernel on a GNU/Linux system.  The
+   versions listed are recommended, (because that is what I'm using on my
+   system to build the kernel).  Earlier versions of these software packages
+   may work fine, however.
+  
+      Package            Version
+      --------------------------------
+      gcc                3.2.1
+      binutils           2.13.90.0.16
+      fileutils          4.1.9
+      make               3.80
+      sh-utils           2.0.12
+      textutils          2.1
+      bash               2.05b
+      ncurses            5.2
+      bochs              4.1
+
+,-------------------.
+| 9. Reporting Bugs |
+`-------------------'
+
+   Please send bugs reports to <bugs@plural-os.org>.
+
+

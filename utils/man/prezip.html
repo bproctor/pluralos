@@ -1,0 +1,79 @@
+
+<html>
+<head>
+ <title>prezip</title>
+</head>
+<body>
+
+<h3><center>prezip</center></h3>
+
+<h2>Name</h2><br>
+
+  prezip - Encodes certain files for better compression.
+
+<h2>Synopsis</h2><br>
+
+  prezip long-option<br>
+  prezip [-cd] infile ... [outfile]
+
+<h2>Description</h2><br>
+
+  The <b>prezip</b> utility prepares certain files for better compression by
+  writing the difference between bytes.  This is useful for getting better
+  compression from multimedia file.
+
+  <p>
+  If no input file (<b>infile</b>) is specified the standard input is used. 
+  If the -c option is specified, then all files specified on the command
+  line will be assumed to be input files.  Otherwise, the last file on the
+  command line will be used as the output file (<b>outfile</b>).  If only
+  one file is specified on the command line, it is used as an input file and
+  the standard output is used.  You can also use - in the file list to read
+  from the standard input and write to a file.
+
+<h2>Options</h2><br>
+
+  <table border=0>
+   <tr>
+    <td><b>-c</b></td>
+    <td>Write to standard output</td>
+   </tr>
+
+   <tr>
+    <td><b>-d</b></td>
+    <td>Decode</td>
+   </tr>
+
+   <tr>
+    <td><b>--help</b></td>
+    <td>Print the help message and exit</td>
+   </tr>
+
+   <tr>
+    <td><b>--version</b></td>
+    <td>Print program version and exit</td>
+   </tr>
+  </table>
+
+<h2>Author</h2><br>
+
+  Brad Proctor
+
+<h2>Reporting Bugs</h2><br>
+
+  Report bugs to <a href=mailto:bugs@plural-os.org>bugs@plural-os.org</a>.
+
+<h2>Copyright</h2><br>
+
+    prezip, Copyright (c) 2001-2003 Brad Proctor<br>
+    This is free software, see the source for copying conditions.
+
+<h2>See Also</h2><br>
+
+<a href="compress.html">compress</a><br>
+<a href="punzip.html">punzip</a><br>
+<a href="pzip.html">pzip</a><br>
+<a href="uncompress.html">uncompress</a>
+
+</body>
+</html>

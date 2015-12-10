@@ -1,0 +1,20 @@
+
+Install instructions for sh-0.0.x
+---------------------------------
+
+1. Type `make'
+
+To install sh
+
+Type `make install'.  To install the sh program into the /bin directory
+INSTALL_DIR needs to be set to root directory, /.  
+
+INSTALL_DIR=/
+sh will be in /bin, and man pages in /usr/man
+
+This is really the only settings for INSTALL_DIR unless you have a test
+partition mounted on the filesystem,
+
+INSTALL_DIR=/plural/
+
+sh will be in /plural/bin, and man pages in /plural/usr/man

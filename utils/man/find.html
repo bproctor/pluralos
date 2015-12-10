@@ -1,0 +1,173 @@
+
+<html>
+<head>
+ <title>find</title>
+</head>
+<body>
+
+<h3><center>find</center></h3>
+
+<h2>Name</h2><br>
+
+  find - Find files
+
+<h2>Synopsis</h2><br>
+
+  find long-option<br>
+  find [-H | -L] path ... expression ...
+
+<h2>Description</h2><br>
+
+  The <b>find</b> utility recursively descends the directory tree and prints
+  each the path for each file that it finds that meet the <b>expression</b>
+  specified to the standard output.
+
+<h2>Options</h2><br>
+
+  <table border=0>
+   <tr>
+    <td>-H</td>
+    <td>Dereference symbolic links</td>
+   </tr>
+
+   <tr>
+    <td>-L</td>
+    <td></td>
+   </tr>
+
+   <tr>
+    <td><b>--help</b></td>
+    <td>Print the help message and exit</td>
+   </tr>
+
+   <tr>
+    <td><b>--version</b></td>
+    <td>Print program version and exit</td>
+   </tr>
+  </table>
+
+The following primaries for the <b>expression</b> argument are supported:
+
+ <table>
+
+  <tr>
+   <td><b>-atime n</b></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td><b>-ctime n</b></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td><b>-depth</b></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td><b>-exec name [arg ...] ;</b></td>
+   <td><b>-exec name [arg ...] { } +</b></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td><b>-group gname</b></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td><b>-links n</b></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td><b>-mtime n</b></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td><b>-name pattern</b></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td><b>-newer file</b></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td><b>-nouser</b></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td><b>-nogroup</b></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td><b>-ok name [arg ...] ;</b></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td><b>-perm [-]mode</b></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td><b>-perm [-]onum</b></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td><b>-print</b></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td><b>-prune</b></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td><b>-size n[c]</b></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td><b>-type c</b></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td><b>-user uname</b></td>
+   <td></td>
+  </tr>
+
+  <tr>
+   <td><b>-xdev</b></td>
+   <td></td>
+  </tr>
+ </table>
+
+<h2>Author</h2><br>
+
+  Brad Proctor
+
+<h2>Reporting Bugs</h2><br>
+
+  Report bugs to <a href=mailto:bugs@plural-os.org>bugs@plural-os.org</a>.
+
+<h2>Copyright</h2><br>
+
+    find, Copyright (c) 2003 Brad Proctor<br>
+    This is free software, see the source for copying conditions.
+
+<h2>See Also</h2><br>
+
+<a href="grep.html">grep</a>
+
+</body>
+</html>

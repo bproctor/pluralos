@@ -1,0 +1,106 @@
+
+<html>
+<head>
+ <title>cmp</title>
+</head>
+<body>
+<h3><center>cmp</center></h3>
+
+<h2>Name</h2><br>
+
+  cmp - Compare two files
+
+<h2>Synopsis</h2><br>
+
+  cmp long-option<br>
+  cmp [-l | -s][-i n[:m]] [file1] [file2]
+
+<h2>Description</h2><br>
+
+  The <b>cmp</b> utility compares two files and tells whether or not they
+  differ.  If they do differ, then <b>cmp</b> will report on what line and
+  byte they differ.
+
+<h2>Options</h2><br>
+
+  <table border=0>
+   <tr>
+    <td><b>-i n[:m]</b></td>
+    <td>This option allows for ranges to be compared.  <b>n</b> says which
+        is the first byte to compare, and <b>m</b> tell the last byte to
+        compare.  If no <b>m</b> is given, <b>cmp</b> will skip the first
+        <b>n</b> bytes and compare till the end of the file.
+
+        <p>
+        The values can have suffixes on them.  These suffixes multiply the
+        value by the amount listed below:
+
+        <table>
+         <tr>
+          <td>k</td>
+          <td>1,000</td>
+          <td>kb</td>
+          <td>1,024</td>
+         </tr>
+
+         <tr>
+          <td>m</td>
+          <td>1,000,000</td>
+          <td>mb</td>
+          <td>1,048,576</td>
+         </tr>
+
+         <tr>
+          <td>g</td>
+          <td>1,000,000,000</td>
+          <td>gb</td>
+          <td>1,073,741,824</td>
+         </tr>
+        </table>
+
+        The suffixes can also be in capital letters.
+    </td>
+   </tr>
+
+   <tr>
+    <td><b>-l</b></td>
+    <td>Print the bytes that differ from each file</td>
+   </tr>
+
+   <tr>
+    <td><b>-s</b></td>
+    <td>Suppresses all output and exits with a status code of zero if the
+        files are the same, otherwise it exits with 1</td>
+   </tr>
+
+   <tr>
+    <td><b>--help</b></td>
+    <td>Print the help message and exit</td>
+   </tr>
+
+   <tr>
+    <td><b>--version</b></td>
+    <td>Print program version and exit</td>
+   </tr>
+  </table>
+
+<h2>Author</h2><br>
+
+  Brad Proctor
+
+<h2>Reporting Bugs</h2><br>
+
+  Report bugs to <a href=mailto:bugs@plural-os.org>bugs@plural-os.org</a>.
+
+<h2>Copyright</h2><br>
+
+    cmp, Copyright (c) 2001-2003 Brad Proctor<br>
+    This is free software, see the source for copying conditions.
+
+<h2>See Also</h2><br>
+
+<a href="comm.html">comm</a><br>
+<a href=¨diff.html¨>diff</a>
+
+</body>
+</html>

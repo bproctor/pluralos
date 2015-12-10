@@ -1,0 +1,91 @@
+
+Status of the headers
+---------------------
+	aio.h		done
+        arpa/inet.h	done
+	assert.h	done
+        cpio.h		done
+	ctype.h		done
+	curses.h	
+	dirent.h	not positive on a types DIR and ino_t
+	dlfcn.h		done
+	errno.h		done
+	fcntl.h		done
+	fenv.h		started
+	float.h		
+	fmtmsg.h	done
+	fnmatch.h   	done
+	ftw.h		missing a couple things
+	glob.h	    	
+	grp.h      	
+	iconv.h	    	
+	inttypes.h	done
+	iso646.h    	done
+	langinfo.h	
+	libgen.h    	
+	limits.h   	started
+	locale.h     	started
+	math.h		missing definitions for HUGE_VAL and MAXFLOAT
+	monetary.h	
+	mqueue.h    	
+	ndbm.h     	
+	netdb.h	    	
+	net/if.h	
+	netinet/in.h	
+	netinet/tcp.h	
+	nl_types.h  	
+	poll.h	    	
+	pthread.h  	
+	pwd.h	    	
+	re_comp.h	
+	regex.h     	
+	regexp.h	
+	sched.h     	
+	search.h	
+	semaphore.h  	
+	setjmp.h	started
+	signal.h    	started
+	stdarg.h	done
+	stdbool.h	done
+	stddef.h    	done
+	stdint.h
+	stdio.h    	started
+	stdlib.h     	done
+	string.h	done
+	strings.h    	done
+	stropts.h	
+	sys/ipc.h	
+	sys/mman.h   	
+	sys/msg.h   	
+	sys/resource.h	
+	sys/select.h	
+	sys/sem.h	 
+	sys/shm.h	
+	sys/socket.h  	
+	sys/stat.h	
+	sys/statvfs.h  	
+	sys/timeb.h  	
+	sys/time.h  	
+	sys/times.h	
+	sys/types.h  	mostly done
+	sys/uio.h	
+	sys/un.h	  
+	sys/utsname.h	
+	sys/wait.h
+	syslog.h   
+	tar.h	    	done
+	term.h
+	termios.h   	started
+	tgmath.h
+	time.h		started
+	ucontext.h  
+	ulimit.h   	done
+	unctrl.h     
+	unistd.h	started
+	utime.h     
+	utmpx.h		done
+	varargs.h   
+	wchar.h    
+	wctype.h    
+	wordexp.h	mostly done
+	xti.h

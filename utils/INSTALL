@@ -1,0 +1,64 @@
+
+
+                   .--------------------------------------.
+                   | Install instructions for utils-0.1.x |
+                   `--------------------------------------'
+
+
+
+1. Building the programs
+------------------------
+
+  To build all the programs, type `make'
+
+  To build a particular program, just type `make progname'.
+
+  examples:
+          make ls
+          make rmdir
+          make od
+
+
+2. Testing the programs
+-----------------------
+
+  You can run the tests for the programs by typing `make test',
+  or you can test an individual program by typing `make test/progname'.
+
+  examples:
+          make test
+          make test/basename
+          make test/cut
+
+  If you want to see more of what is going on during the testing, you can
+  replace test with vtest to get more detailed output.
+
+
+3. Install the programs
+-----------------------
+
+  To install the programs type `make install' this will put all the programs
+  in their proper directories, whether it be /bin, /usr/bin, or /sbin; and the
+  man files will be put in the /usr/man directory.
+
+
+3.1 INSTALL_DIR
+---------------
+
+  You can change whether the base directory is /usr or /usr/local by
+  modifying the INSTALL_DIR variable at the top of the Makefile.  The man
+  pages wil go in either /usr or /usr/local depending on this setting.  This
+  will only affect programs that are to be installed in the /usr directory,
+  no other programs will be relocated by changeing this. 
+
+
+3.2 ROOT_DIR
+------------
+
+  If you are building a test partition mounted elsewhere on your filesystem,
+  you can change the base install directory by editing the top Makefile and
+  change the variable ROOT_DIR.  For example,  To install the programs in the
+  /mnt/test/ directory: ROOT_DIR=/mnt/test/ otherwise, use ROOT_DIR=/ to
+  install normally.
+
+

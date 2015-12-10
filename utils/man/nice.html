@@ -1,0 +1,90 @@
+
+<html>
+<head>
+ <title>nice</title>
+</head>
+<body>
+
+<h3><center>nice</center></h3>
+
+<h2>Name</h2><br>
+
+  nice - Invoke a utility with an altered scheduling priority
+
+<h2>Synopsis</h2><br>
+
+  nice long-option<br>
+  nice [-n increment] utility [arg ...]
+
+<h2>Description</h2><br>
+
+  The <b>nice</b> utility invokes the utility <b>utility</b> with an altered
+  scheduling priority than the default.  By default, Plural sets user-level
+  programs to a priority of 16 (0-32, 0 being highest).  If no increment is
+  given to <b>nice</b> on the command line, 10 is assumed.  This will set the
+  default priority to 26.  If the user lacks appropriate privileges to
+  affect the priority as requested, <b>nice</b> will give a warning message,
+  but will not prevent <b>utility</b> from executing.
+
+  <p>
+  The exit status of <b>nice</b> is the same as <b>utility</b>'s exit
+  status.  If there is an error in the <b>nice</b> utility.  The following
+  may be returned:
+
+  <table>
+   <tr>
+    <td><b>1-125</b></td>
+    <td>An error occured in the <b>nice</b> utility</td>
+   </tr>
+
+   <tr>
+    <td><b>126</b></td>
+    <td><b>utility</b> found, but could not be executed</td>
+   </tr>
+
+   <tr>
+    <td><b>127</b></td>
+    <td><b>utility</b> could not be found</td>
+   </tr>
+  </table>
+   
+
+<h2>Options</h2><br>
+
+  <table border=0>
+   <tr>
+    <td><b>-n increment</b></td>
+    <td>Change the processes scheduling priority by <b>increment</b>. 
+        <b>increment</b> can be either positive or negative.</td>
+   </tr>
+
+   <tr>
+    <td><b>--help</b></td>
+    <td>Print the help message and exit</td>
+   </tr>
+ 
+   <tr>
+    <td><b>--version</b></td>
+    <td>Print program version and exit</td>
+   </tr>
+  </table>
+
+<h2>Author</h2><br>
+
+  Brad Proctor
+
+<h2>Reporting Bugs</h2><br>
+
+  Report bugs to <a href=mailto:bugs@plural-os.org>bugs@plural-os.org</a>.
+
+<h2>Copyright</h2><br>
+
+    nice, Copyright (c) 2003 Brad Proctor<br>
+    This is free software, see the source for copying conditions.
+
+<h2>See Also</h2><br>
+
+<a href="renice.html">renice</a>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+#!/bin/sh
+
+TEST=../ftest
+c=0
+
+if `$TEST '../../cut -c -1 one-line' 	'h'`; then c=1; fi
+if `$TEST '../../cut -c 2- one-line' 	'ello this is a test'`; then c=1; fi
+if `$TEST '../../cut -c 3-8 one-line' 	'llo th'`; then c=1; fi
+if `$TEST '../../cut -b -12 one-line' 	'hello this i'`; then c=1; fi
+if `$TEST '../../cut -b 12- one-line' 	'is a test'`; then c=1; fi
+if `$TEST '../../cut -b 1-21 one-line' 	'hello this is a test'`; then c=1; fi
+
+#
+# Need to add tests for larger files
+#
+
+if [ $c = 1 ]; then
+	echo "failed";
+else
+	echo "passed";
+fi

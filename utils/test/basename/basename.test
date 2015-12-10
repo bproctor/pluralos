@@ -1,0 +1,25 @@
+#!/bin/sh
+
+TEST=../ftest
+
+c=0
+if `$TEST '../../basename a' 		'a'`; then c=1; fi
+if `$TEST '../../basename a/b'		'b'`; then c=1; fi
+if `$TEST '../../basename /a/b'		'b'`; then c=1; fi
+if `$TEST '../../basename a/b/'		'b'`; then c=1; fi
+if `$TEST '../../basename a/b//'	'b'`; then c=1; fi
+if `$TEST '../../basename b'		'b'`; then c=1; fi
+if `$TEST '../../basename /'		'/'`; then c=1; fi
+if `$TEST '../../basename //'		'/'`; then c=1; fi
+if `$TEST '../../basename ///'		'/'`; then c=1; fi
+if `$TEST '../../basename ///a///'	'a'`; then c=1; fi
+if `$TEST '../../basename a.b .b'	'a'`; then c=1; fi
+if `$TEST '../../basename ab b'		'a'`; then c=1; fi
+if `$TEST '../../basename ab ab'	'ab'`; then c=1; fi
+if `$TEST '../../basename abc/abcd.12 .12' 'abcd'`; then c=1; fi
+
+if [ $c = 1 ]; then
+	echo "failed";
+else
+	echo "passed";
+fi

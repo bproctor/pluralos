@@ -1,0 +1,71 @@
+
+<html>
+<head>
+ <title>pwd</title>
+</head>
+<body>
+
+<h3><center>pwd</center></h3>
+
+<h2>Name</h2><br>
+
+  pwd - Print the current working directory
+
+<h2>Synopsis</h2><br>
+
+  pwd long-option<br>
+  pwd [-L | -P]
+
+<h2>Description</h2><br>
+
+  The <b>pwd</b> utility prints the current working directory to the
+  standard output.
+
+<h2>Options</h2><br>
+
+  <table border=0>
+   <tr>
+    <td><b>-L</b></td>
+    <td>If the <b>PWD</b> environment variable contains a pathname for the
+        current working directory that does not contain . or .. <b>pwd</b> prints
+        this pathname to the standard output.  Otherwise, this option behaves as the
+        <b>-P</b> option</td>
+   </tr>
+
+   <tr>
+    <td><b>-P</b></td>
+    <td>Do not write a pathname that contains symbolic links</td>
+   </tr>
+
+   <tr>
+    <td><b>--help</b></td>
+    <td>Print the help message and exit</td>
+   </tr>
+
+   <tr>
+    <td><b>--version</b></td>
+    <td>Print program version and exit</td>
+   </tr>
+  </table>
+
+ If both <b>-L</b> and <b>-P</b> are specified, the last one applies.  If
+neither are specified, then <b>pwd</b> behaves as if <b>-L</b> was
+specified.
+
+<h2>Author</h2><br>
+
+  Brad Proctor
+
+<h2>Reporting Bugs</h2><br>
+
+  Report bugs to <a href=mailto:bugs@plural-os.org>bugs@plural-os.org</a>.
+
+<h2>Copyright</h2><br>
+
+    pwd, Copyright (c) 2001-2003 Brad Proctor<br>
+    This is free software, see the source for copying conditions.
+
+<h2>See Also</h2><br>
+
+</body>
+</html>

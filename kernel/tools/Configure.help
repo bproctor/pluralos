@@ -1,0 +1,148 @@
+
+MTRR (Memory Type Range Registers) Support
+CONFIG_MTRR
+  i686 Processors and later have support for Memory Type Range
+  Registers.  These can be used to control processor access to
+  different memory ranges.  Saying 'y' here even if your CPU
+  does not support MTRR won't hurt.
+
+  If unsure, Say 'y' here.
+
+SMP (Symmetric Multi Processing) Support
+CONFIG_SMP
+  If you have more than one CPU in your computer say 'y' to this
+  option to add support for multiple CPUs.
+
+  If unsure, Say 'n' here.
+
+MMX (Multimedia Extentions) Support
+CONFIG_MMX
+  Say 'y' to this option to take advantage of these CPU instruction
+  that can be used in places in the kernel to speed it up.
+
+  If unsure, Say 'y' here.
+
+MSR (Model Specific Registers) Support
+CONFIG_MSR
+  This option will allow the kernel to use the Model Specific
+  Registers.
+
+  If unsure, Say 'y' here.  
+
+PCI support
+CONFIG_PCI
+  This option will add code to the kernel to support the PCI bus.
+  If you have a system with a PCI bus, you will want to say 'y' here.
+
+  If unsure, say 'y' here.
+
+PCI device name database
+CONFIG_PCI_DATABASE
+  This option will add a database of all the names of PCI devices known
+  to the kernel.  The database is about 100kb, but the memory is freed
+  after the kernel is loaded.  Unless you are worried about the actual
+  size of the kernel image, you will probably want to say 'y' here.
+
+  If unsure, say 'y' here.
+
+Use Pascal calling convention
+CONFIG_RTD
+  This option uses a different calling convetion for calling functions.
+  It makes each function one instruction shorter and is slightly faster
+  than the standard C calling convention.  The kernel does not currently
+  depend on any specific calling convetion, so this option has been made
+  available.  This option may be removed in future kernels depending on
+  how the development proceeds.  Unless you know what your doing, select
+  'n' here.
+
+  If unsure, say 'n' here.
+
+Debugger support
+CONFIG_DEBUGGER
+  Selecting this option will allow the kernel to enter the builtin
+  debugger when an exception occurs.  This option will increase the
+  kernel size by about 20k.  Unless you are helping to develop the
+  kernel, there is no need to say 'y' here.
+
+  If unsure, say 'n' here.
+
+Serial Support
+CONFIG_SERIAL
+  If want to be able to connect and use devices through a serial
+  port, (ie. serial mouse) then say 'y' here.
+
+Standard AT Keyboard Support
+CONFIG_KEYBOARD
+  If you have a computer with a standard 101-key, 104-key or similar
+  keyboard attached.
+
+  If unsure, say 'y' here.
+
+Floppy Disk Support
+CONFIG_FLOPPY
+  If you have a standard floppy drive and would like to use it,
+  say 'y' here.
+
+  If unsure, say 'y' here.
+
+IDE Disk Support
+CONFIG_IDE
+  If you have a IDE hard drive, say 'y' here to add support for it.
+
+  If unsure, say 'y' here.
+
+Number of Channels
+CONFIG_CHANNELS
+  Select the number of channels that the kernel can use.  Note that
+  threads are attached to a channel, typically each process has it's
+  own channel.  This means that what you set this to also effects
+  the maximum number of programs that can run at once on the system.
+
+  FUTURE: This option will disappear as channels will be allocated
+  dynamically by the kernel as needed.  The number of channels will
+  be limited only by available memory in the computer.
+
+  If unsure, go with the default: 64
+
+Number of Messages
+CONFIG_MESSAGES
+  Select the number of messages that the kernel can use.  Each time
+  a message is sent through the system it uses one of these and
+  then it is freed when the message is recieved on the other end.
+
+  FUTURE: This option will disappear as messages will be allocated
+  dynamically by the kernel as needed.  The number of messages will
+  be limited only by available memory in the computer.
+
+  If unsure, go with the default: 128
+
+Delay Calibration Precision
+CONFIG_DELAY_PRECISION
+  The kernel uses delay loops for many thing.  This sets how precise
+  these delays should be.
+
+  If unsure, go with the default: 8
+
+Number of scheduling priorities
+CONFIG_PRIORIES
+  This selects the number of different priorities that a thread
+  running on the system may be assigned to.  If you are running
+  a small system with only a few running programs at a time, you
+  can select a smaller number.  If you have a large system with
+  many programs running at once, you may want to select a larger
+  number.  The default is 32 and is optimal for most systems.
+
+  If unsure, go with the default: 32
+
+Video mode
+CONFIG_VGA80x25
+  Here you can select the default text video mode.  Changing the
+  video mode in the boot code was in the older kernel, currently
+  there is no support for changing the video mode, however these
+  values are used when displaying text on the screen.  Until the
+  kernel has support for changing the text mode again, it is
+  recommended that you select an 80x25 screen.  Unless your BIOS
+  sets the default text mode to something else (highly unlikely).
+
+  If unsure, select 80x25.
+

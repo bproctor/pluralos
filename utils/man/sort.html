@@ -1,0 +1,128 @@
+
+<html>
+<head>
+ <title>sort</title>
+</head>
+<body>
+
+<h3><center>sort</center></h3>
+
+<h2>Name</h2><br>
+
+  sort - Sort, merge, or sequence check text files
+
+<h2>Synopsis</h2><br>
+
+  sort long-option<br>
+  sort [-m][-o output][-bdfinru][-t char][-k keydef]... [file ...]<br>
+  sort -c [-bdfinru][-t char][-k keydef][file]
+
+<h2>Description</h2><br>
+
+  The <b>sort</b> utility sorts lines of the files specified and writes the
+  result to the specified output or the standard output. <b>sort</b> can
+  also perform the function of merging presorted file together and can check
+  that a file is correctly sorted.
+
+<h2>Options</h2><br>
+
+  <table border=0>
+   <tr>
+    <td><b>-b</b></td>
+    <td>Ignore any leading blanks on the line when sorting</td>
+   </tr>
+
+   <tr>
+    <td><b>-c</b></td>
+    <td>Check that a single input file is sorted.  No output is produced. 
+        The exit code will be EXIT_SUCCESS if the file is sorted and
+        EXIT_FAILURE if not.</td>
+   </tr>
+
+   <tr>
+    <td><b>-d</b></td>
+    <td>Specifies that only blanks and alphanumeric characters are relevent
+        when sorting</td>
+   </tr>
+
+   <tr>
+    <td><b>-f</b></td>
+    <td>Use case-insensitive comparisons when sorting</td>
+   </tr>
+
+   <tr>
+    <td><b>-i</b></td>
+    <td>Ignore non-printable characters</td>
+   </tr>
+
+   <tr>
+    <td><b>-k keydef</td>
+    <td>Specify the sort key field definition.</td>
+   </tr> 
+
+   <tr>
+    <td><b>-m</b></td>
+    <td>Merge only.  The input file(s) are assumed to be already sorted.</td>
+   </tr>
+
+   <tr>
+    <td><b>-n</b></td>
+    <td>Numeric sort.  Restricts the sort key to an initial numeric string</td>
+   </tr>
+
+   <tr>
+    <td><b>-o output</b></td>
+    <td>Specified the name of the output file to be <b>output</b>.  If this
+        option is not specified, the output is written to the standard
+        output.</td>
+   </tr>
+
+   <tr>
+    <td><b>-r</b></td>
+    <td>Sort in reverse order</td>
+   </tr>
+
+   <tr>
+    <td><b>-t char</b></td>
+    <td>Use <b>char</b> as the field seperator character.  If this option is
+        not specified, blanks are used as field seperators.</td>
+   </tr>
+
+   <tr>
+    <td><b>-u</b</td>
+    <td>Unique.  Suppress all but one in each set of lines having equal
+        keys.  If this option is used with the <b>-c</b> option, then
+        <b>sort</b> will check that there are no lines with duplicate keys
+        in addition to checking whether the file is sorted or not.</td>
+   </tr>
+
+   <tr>
+    <td><b>--help</b></td>
+    <td>Print the help message and exit</td>
+   </tr>
+
+   <tr>
+    <td><b>--version</b></td>
+    <td>Print program version and exit</td>
+   </tr>
+  </table>
+
+<h2>Author</h2><br>
+
+  Brad Proctor
+
+<h2>Reporting Bugs</h2><br>
+
+  Report bugs to <a href=mailto:bugs@plural-os.org>bugs@plural-os.org</a>.
+
+<h2>Copyright</h2><br>
+
+    sort, Copyright (c) 2001-2003 Brad Proctor<br>
+    This is free software, see the source for copying conditions.
+
+<h2>See Also</h2><br>
+
+<a href="tsort.html">tsort</a>
+
+</body>
+</html>

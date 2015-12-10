@@ -1,0 +1,7 @@
+
+- To build the programs, type `make'
+- To run the program tests, type `make test'
+- To install the programs, type `make install'
+- To start the build process over, type `make distclean'
+- To build an individiual program type `make program_name'
+- To run tests for an individual program type `make test/program_name'

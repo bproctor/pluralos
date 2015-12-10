@@ -1,0 +1,81 @@
+#!/bin/sh
+
+#
+# Setup the /bin directory
+#
+
+mkdir /bin
+
+#
+# Setup the /boot directory
+#
+
+mkdir /boot
+
+#
+# Setup the /dev directory
+#
+
+mkdir /dev
+
+#
+# Setup the /etc directory
+#
+mkdir /etc /etc/rc.d /etc/rc.d/rc0.d /etc/rc.d/rc1.d /etc/rc.d/rc2.d 
+mkdir /etc/rc.d/rc3.d /etc/rc.d/rc4.d /etc/rc.d/rc5.d /etc/rc.d/rc6.d
+mkdir /etc/rc.d/init.d
+
+mv install /etc
+mv rc.sysinit /etc/rc.d
+
+#
+# Setup the /home directory
+#
+
+mkdir /home
+
+#
+# Setup the /mnt directory
+#
+
+mkdir /mnt
+
+#
+# Setup the /proc directory
+#
+
+mkdir /proc
+chmod 0555 /proc
+
+#
+# Setup the /root directory
+#
+
+mkdir /root
+
+#
+# Setup the /sbin directory
+#
+
+mkdir /sbin
+
+#
+# Setup the /tmp directory
+#
+
+mkdir /tmp
+
+#
+# Setup the /usr directory
+#
+
+mkdir /usr /usr/bin /usr/sbin /usr/include /usr/lib /usr/doc /usr/share
+mkdir /usr/local /usr/local/bin /usr/local/sbin /usr/local/include
+mkdir /usr/local/lib /usr/local/share /usr/man /usr/doc /usr/etc /usr/src
+mkdir /usr/local/man /usr/local/doc /usr/local/etc /usr/local/src
+
+#
+# Setup the /var directory
+#
+
+mkdir /var /var/log

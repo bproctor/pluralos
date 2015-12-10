@@ -1,0 +1,19 @@
+
+Classic ANSI Completed
+----------------------
+
+	assert.h	done
+	ctype.h		done
+	float.h
+	limits.h	done
+	locale.h
+	math.h
+	setjmp.h
+	signal.h
+	stdarg.h	done
+	stddef.h	done
+	stdio.h
+	stdlib.h
+	string.h
+	time.h
+	

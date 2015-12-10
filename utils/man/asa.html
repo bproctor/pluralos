@@ -1,0 +1,87 @@
+
+<html>
+<head>
+ <title>asa</title>
+</head>
+<body>
+
+<h3><center>asa</center></h3>
+
+<h2>Name</h2><br>
+
+  asa - Interpret carriage-control characters
+
+<h2>Synopsis</h2><br>
+
+	asa long-option<br>
+	asa [file ...]
+
+<h2>Description</h2><br>
+
+  The <b>asa</b> utility writes it's input files to the standard output
+  while converting carriage-control characters into line-printer control
+  sequences.  If no file is specified on the command line, the standard
+  input will be used.
+
+  <p>
+  <b>asa</b> uses the first character of each line to determine the output. 
+  The first character can be one of the following:
+
+  <p>
+  <table> 
+   <tr>
+    <td><b>space</b></td>
+    <td>The rest of the line is output without change.</td>
+   </tr>
+   
+   <tr>
+    <td><b>0</b></td>
+    <td>A newline character is output, and then the rest of the line.</td>
+   </tr>
+
+   <tr>
+    <td><b>1</b></td>
+    <td>Advances to the next page, then the rest of the line.</td>
+   </tr>
+  
+   <tr>
+    <td><b>+</b></td>
+    <td>Go to the beginning of the previous line, then the rest of the
+        line.  If + is the first character from the input, it is
+        equivalent to <space>.</td>
+   </tr>   
+  </table>
+
+<h2>Options</h2><br>
+
+  <table border=0>
+   <tr>
+    <td><b>--help</b></td>
+    <td>Print the help message and exit</td>
+   </tr>
+
+   <tr>
+    <td><b>--version</b></td>
+    <td>Print program version and exit</td>
+   </tr>
+  </table>
+
+<h2>Author</h2><br>
+
+  Brad Proctor
+
+<h2>Reporting Bugs</h2><br>
+
+  Report bugs to <a href=mailto:bugs@plural-os.org>bugs@plural-os.org</a>.
+
+<h2>Copyright</h2><br>
+
+    asa, Copyright (c) 2003 Brad Proctor<br>
+    This is free software, see the source for copying conditions.
+
+<br><h2>See Also</h2><br>
+
+<a href=¨lp.html¨>lp</a>
+
+</body>
+</html>

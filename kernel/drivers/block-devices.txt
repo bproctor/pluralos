@@ -1,0 +1,219 @@
+
+        Plural Operating System /dev entries
+
+The major numbers are an 8-bit number which defines
+the type of device, or grouping of devices, and the
+minor number defines the specific device.
+
+Major           Minor           Device                  Description
+------------------------------------------------------------------------------
+0                                                       Reserved
+
+1               0..255          ram0..ram255            RAM Disks
+1               256..511        ram256..ram511
+
+2               0               fd0                     Floppy drives, Autodetect
+2               1               fd1
+2               2               fd2
+2               3               fd3
+2               4               fd4
+2               5               fd5
+2               6               fd6
+2               7               fd7
+
+To specify a specific floppy disk and drive, add the following, The
+description is in the format of: drive type, disk size, drive size.
+Replace the ? in the device name with 0-7 depending on the drive listed
+above.
+
+2               8..15           fd?d360                 5.25" 360k 360k
+2               16..23          fd?h360                 5.25" 360k 1200k
+2               24..31          fd?h410                 5.25" 410k 1200k
+2               32..39          fd?h420                 5.25" 420k 1200k
+2               40..47          fd?h720                 5.25" 720k 1200k
+2               48..55          fd?h880                 5.25" 880k 1200k
+2               56..63          fd?h1200                5.25" 1200k 1200k
+2               64..71          fd?h1440                5.25" 1440k 1200k
+2               72..79          fd?h1476                5.25" 1476k 1200k
+2               80..87          fd?h1494                5.25" 1494k 1200k
+2               88..95          fd?h1600                5.25" 1600k 1200k
+
+2               96..103         fd?u360                 3.5" 360k
+2               104..111        fd?u720                 3.5" 720k
+2               112..119        fd?u820                 3.5" 820k
+2               120..127        fd?u830                 3.5" 830k
+2               128..135        fd?u1040                3.5" 1040k
+2               136..143        fd?u1120                3.5" 1120k
+2               144..151        fd?u1440                3.5" 1440k
+2               152..159        fd?u1600                3.5" 1600k
+2               160..167        fd?u1680                3.5" 1680k
+2               168..175        fd?u1722                3.5" 1720k
+2               176..183        fd?u1743                3.5" 1743k
+2               184..191        fd?u1760                3.5" 1760k
+2               192..199        fd?u1840                3.5" 1840k
+2               200..207        fd?u1920                3.5" 1920k
+2               208..215        fd?u2880                3.5" 2880k
+2               216..223        fd?u3200                3.5" 3200k
+2               224..231        fd?u3520                3.5" 3520k
+2               232..239        fd?u3840                3.5" 3840k
+
+3               0               hda                     IDE Hard Drives 
+3               1..63           hda1..hda63
+3               64              hdb
+3               65..127         hdb1..hdb63
+3               128             hdc
+3               129..191        hdc1..hdc63
+3               192             hdd
+3               193..255        hdd1..hdd63
+3               256             hde
+3               257..319        hde1..hde63
+3               320             hdf
+3               321..383        hdf1..hdf63
+3               384             hdg
+3               385..447        hdg1..hdg63
+3               448             hdh
+3               449..511        hdh1..hdh63
+3               512             hdi
+3               513..575        hdi1..hdi63
+3               576             hdj
+3               577..639        hdj1..hdj63
+3               640             hdk
+3               641..703        hdk1..hdk63
+3               704             hdl
+3               705..767        hdl1..hdl63
+3               768             hdm
+3               769..831        hdm1..hdm63
+3               832             hdn
+3               833..895        hdn1..hdn63
+3               896             hdo
+3               897..959        hdo1..hdo63
+3               960             hdp
+3               961..1023       hdp1..hdp63
+3               1024            hdq
+3               1025..1087      hdq1..hdq63
+3               1088            hdr
+3               1089..1151      hdr1..hdr63
+3               1152            hds
+3               1153..1215      hds1..hds63
+3               1216            hdt
+3               1217..1279      hdt1..hdt63
+3               1280            hdu
+3               1281..1343      hdu1..hdu63
+3               1344            hdv
+3               1345..1407      hdv1..hdv63
+3               1408            hdw
+3               1409..1471      hdw1..hdw63
+3               1472            hdx
+3               1473..1535      hdx1..hdx63
+3               1536            hdy
+3               1537..1599      hdy1..hdy63
+3               1600            hdz
+3               1601..1663      hdz1..hdz63
+
+4               0               sda                     SCSI Hard Drives
+4               1..63           sda1..sda63
+4               64              sdb
+4               65..127         sdb1..sdb63
+4               128             sdc
+4               129..191        sdc1..sdc63
+4               192             sdd
+4               193..255        sdd1..sdd63
+4               256             sde
+4               257..319        sde1..sde63
+4               320             sdf
+4               321..383        sdf1..sdf63
+4               384             sdg
+4               385..447        sdg1..sdg63
+4               448             sdh
+4               449..511        sdh1..sdh63
+4               512             sdi
+4               513..575        sdi1..sdi63
+4               576             sdj
+4               577..639        sdj1..sdj63
+4               640             sdk
+4               641..703        sdk1..sdk63
+4               704             sdl
+4               705..767        sdl1..sdl63
+4               768             sdm
+4               769..831        sdm1..sdm63
+4               832             sdn
+4               833..895        sdn1..sdn63
+4               896             sdo
+4               897..959        sdo1..sdo63
+4               960             sdp
+4               961..1023       sdp1..sdp63
+4               1024            sdq
+4               1025..1087      sdq1..sdq63
+4               1088            sdr
+4               1089..1151      sdr1..sdr63
+4               1152            sds
+4               1153..1215      sds1..sds63
+4               1216            sdt
+4               1217..1279      sdt1..sdt63
+4               1280            sdu
+4               1281..1343      sdu1..sdu63
+4               1344            sdv
+4               1345..1407      sdv1..sdv63
+4               1408            sdw
+4               1409..1471      sdw1..sdw63
+4               1472            sdx
+4               1473..1535      sdx1..sdx63
+4               1536            sdy
+4               1537..1599      sdy1..sdy63
+4               1600            sdz
+4               1601..1663      sdz1..sdz63
+4               1664            sdaa
+4               1665..1727      sdaa1..sdaa63
+4               1728            sdab
+4               1729..1791      sdab1..sdab63
+4               1792            sdac
+4               1793..1855      sdac1..sdac63
+4               1856            sdad
+4               1857..1919      sdad1..sdad63
+4               1920            sdae
+4               1921..1983      sdae1..sdae63
+4               1984            sdaf
+4               1985..2047      sdaf1..sdaf63
+4               2048            sdag
+4               2049..2111      sdag1..sdag63
+4               2112            sdah
+4               2113..2175      sdah1..sdah63
+4               2176            sdai
+4               2177..2239      sdai1..sdai63
+4               2240            sdaj
+4               2241..2303      sdaj1..sdaj63
+4               2304            sdak
+4               2305..2367      sdak1..sdak63
+4               2368            sdal
+4               2369..2431      sdal1..sdal63
+4               2432            sdam
+4               2433..2495      sdam1..sdam63
+4               2496            sdan
+4               2497..2559      sdan1..sdan63
+4               2560            sdao
+4               2561..2623      sdao1..sdao63
+4               2624            sdap
+4               2625..2687      sdap1..sdap63
+4               2688            sdaq
+4               2689..2751      sdaq1..sdaq63
+4               2752            sdar
+4               2753..2815      sdar1..sdar63
+4               2816            sdas
+4               2817..2879      sdas1..sdas63
+4               2880            sdat
+4               2881..2943      sdat1..sdat63
+4               2944            sdau
+4               2945..3007      sdau1..sdau63
+4               3008            sdav
+4               3009..3071      sdav1..sdav63
+4               3072            sdaw
+4               3073..3135      sdaw1..sdaw63
+4               3136            sdax
+4               3137..3199      sdax1..sdax63
+4               3200            sday
+4               3201..3263      sday1..sday63
+4               3264            sdaz
+4               3265..3327      sdaz1..sdaz63
+
+5               0..255          loop0..loop255          Loopback Devices
+5               256..511        loop256..loop511

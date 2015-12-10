@@ -1,0 +1,24 @@
+#!/bin/sh
+
+TEST=../ftest
+
+c=0
+if `$TEST '../../dirname a' 		'.'`; then c=1; fi
+if `$TEST '../../dirname a/b'		'a'`; then c=1; fi
+if `$TEST '../../dirname /a/b'		'/a'`; then c=1; fi
+if `$TEST '../../dirname a/b/'		'a'`; then c=1; fi
+if `$TEST '../../dirname a/b//'		'a'`; then c=1; fi
+if `$TEST '../../dirname b'		'.'`; then c=1; fi
+if `$TEST '../../dirname /'		'/'`; then c=1; fi
+if `$TEST '../../dirname //'		'/'`; then c=1; fi
+if `$TEST '../../dirname ///'		'/'`; then c=1; fi
+if `$TEST '../../dirname ///a///'	'/'`; then c=1; fi
+if `$TEST '../../dirname ./a'		'.'`; then c=1; fi
+if `$TEST '../../dirname ab'		'.'`; then c=1; fi
+if `$TEST '../../dirname abc/123.4'	'abc'`; then c=1; fi
+
+if [ $c = 1 ]; then
+	echo "failed";
+else
+	echo "passed";
+fi

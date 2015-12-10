@@ -1,0 +1,151 @@
+
+<html>
+<head>
+ <title>chmod</title>
+</head>
+<body>
+<h3><center>chmod</center></h3>
+
+<h2>Name</h2><br>
+
+  chmod - Change file permisions
+
+<h2>Synopsis</h2><br>
+
+  chmod long-option<br>
+  chmod mod files ...
+
+<h2>Description</h2><br>
+
+  The <b>chmod</b> utility changes the permission bits described in
+  <b>mod</b> of the file <b>file</b>.
+
+  <p>
+  <b>mod</b> can be described in two ways, the first is a set of four octal
+  digits.  If the first of the octal digits is not specified, it is assumed
+  to be 0.  The following three are required.  They are created by adding up
+  the desired permissions as descibed below.  The synopsis for this method
+  can be described as [O]OOO where O is an octal digit<br>
+
+  <table>
+   <tr>
+    <td><b>1</b></td>
+    <td>Read permission</td>
+   </tr>
+
+   <tr>
+    <td><b>2</b></td>
+    <td>Write permission</td>
+   </tr>
+
+   <tr>
+    <td><b>4</b></td>
+    <td>Execute permission</td>
+   </tr>
+  </table>
+
+  <br>The set of octal digits is as follows:<br>
+
+  <table>
+   <tr>
+    <td><b>First digit</b></td>
+    <td></td>
+   </tr>
+
+   <tr>
+    <td><b>Second digit</b></td>
+    <td>Describes permissions given to the owner of the file</td>
+   </tr>
+
+   <tr>
+    <td><b>Third digit</b></td>
+    <td>Describes permissions given to the group the owner belongs to</td>
+   </tr>
+
+   <tr>
+    <td><b>Fourth digit</b></td>
+    <td>Describes permissions given to everyone else</td>
+   </tr>
+  </table>
+
+  <p>
+  The second way to descibe the permission bits is using a letter to descibe a set of users,
+  followed by +, - or = to add, remove, or set permission, followed by a combination of
+  letters descibing what permission to change.  For example, `g=rw' sets permission so the
+  group has read and write permissions.  `o-x' removes execute permission from others but any other
+  permissions that may exists are not affected.  The first letter can be one
+  of the following:
+
+  <table>
+   <tr>
+    <td><b>u</b></td>
+    <td>The user that owns the file</td>
+   </tr>
+
+   <tr>
+    <td><b>g</b></td>
+    <td>The group the owner belongs to</td>
+   </tr>
+
+   <tr>
+    <td><b>o</b></td>
+    <td>Everyone else who is not the owner and not a member of the group the
+        owner belongs to</td>
+   </tr>
+  </table>
+
+  <br>The last part can be made up of one or more of the following letter:<br>
+
+  <table>
+   <tr>
+    <td><b>r</b></td>
+    <td>Read permission</td>
+   </tr>
+
+   <tr>
+    <td><b>w</b></td>
+    <td>Write permission</td>
+   </tr>
+
+   <tr>
+    <td><b>x</b></td>
+    <td>Execute permission</td>
+   </tr>
+  </table>
+
+<h2>Options</h2><br>
+
+  <table border=0>
+   <tr>
+    <td><b>--help</b></td>
+    <td>Print the help message and exit</td>
+   </tr>
+
+   <tr>
+    <td><b>--version</b></td>
+    <td>Print program version and exit</td>
+   </tr>
+  </table>
+
+<h2>Author</h2><br>
+
+  Brad Proctor
+
+<h2>Reporting Bugs</h2><br>
+
+  Report bugs to <a href=mailto:bugs@plural-os.org>bugs@plural-os.org</a>.
+
+<h2>Copyright</h2><br>
+
+    chmod, Copyright (c) 2001-2003 Brad Proctor<br>
+    This is free software, see the source for copying conditions.
+
+<h2>See Also</h2><br>
+
+<a href="chgrp.html">chgrp</a><br>
+<a href="chown.html">chown</a><br>
+<a href=¨ls.html¨>ls</a><br>
+<a href=¨umask.html¨>umask</a>
+
+</body>
+</html>

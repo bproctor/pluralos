@@ -1,0 +1,179 @@
+
+<html>
+<head>
+ <title>expr</title>
+</head>
+<body>
+
+<h3><center>expr</center></h3>
+
+<h2>Name</h2><br>
+
+  expr - Calculate an expression
+
+<h2>Synopsis</h2><br>
+
+  expr long-option<br>
+  expr [-f] format
+
+<h2>Description</h2><br>
+
+  The <b>expr</b> utility calculates an expression given on the command
+  line.  Expressions can be built using the following operators.  If the
+  <b>-f</b> option is used, some of these operands are not available.
+
+  <table>
+   <tr>
+    <td><b>expr1 + expr2</b></td>
+    <td>Add <b>expr1</b> and <b>expr2</b></td>
+   </tr>
+
+   <tr>
+    <td><b>expr1 - expr2</b></td>
+    <td>Subtract <b>expr2</b> from <b>expr1</b></td>
+   </tr>
+
+   <tr>
+    <td><b>expr1 * expr2</b></td>
+    <td>Multiply <b>expr1</b> and <b>expr2</b></td>
+   </tr>
+
+   <tr>
+    <td><b>expr1 / expr2</b></td>
+    <td>Divide <b>expr1</b> by <b>expr2</b></td>
+   </tr>
+
+   <tr>
+    <td><b>expr1 % expr2</b></td>
+    <td>Find remainder of <b>expr1</b> divided by <b>expr2</b></td>
+   </tr>
+
+   <tr>
+    <td><b>expr1 << expr2</b></td>
+    <td>Shift <b>expr1</b> left by <b>expr2</b> bits</td>
+   </tr>
+
+   <tr>
+    <td><b>expr1 >> expr2</b></td>
+    <td>Shift <b>expr1</b> right by <b>expr2</b> bits</td>
+   </tr>
+
+   <tr>
+    <td><b>expr1 ** expr2</b></td>
+    <td>Raise <b>expr1</b> to the power of <b>expr2</b></td>
+   </tr>
+
+   <tr>
+    <td><b>expr1 == expr2</b></td>
+    <td>If <b>expr1</b> is equal to <b>expr2</b>, 1, else 0</td>
+   </tr>
+
+   <tr>
+    <td><b>expr1 ^ expr2</b></td>
+    <td>Bitwise Exclusive OR</td>
+   </tr>
+
+   <tr>
+    <td><b>expr1 | expr2</b></td>
+    <td>Bitwise OR</td>
+   </tr>
+
+   <tr>
+    <td><b>expr1 & expr2</b></td>
+    <td>Bitwise AND</td>
+   </tr>
+
+   <tr>
+    <td><b>expr1 && expr2</b></td>
+    <td>Logical AND</td>
+   </tr>
+
+   <tr>
+    <td><b>expr1 || expr2</b></td>
+    <td>Logical OR</td>
+   </tr>
+
+   <tr>
+    <td><b>expr1 != expr2</b></td>
+    <td>If <b>expr1</b> is not equal to <b>expr2</b>, 1, else 0</td>
+   </tr>
+
+   <tr>
+    <td><b>expr1 < expr2</b></td>
+    <td>If <b>expr1</b> is less than <b>expr2</b>, 1, else 0</td>
+   </tr>
+
+   <tr>
+    <td><b>expr1 > expr2</b></td>
+    <td>If <b>expr1</b> is greater than <b>expr2</b>, 1, else 0</td>
+   </tr>
+
+   <tr>
+    <td><b>expr1 <= expr2</b></td>
+    <td>If <b>expr1</b> is less than or equal to <b>expr2</b>, 1, else 0</td>
+   </tr>
+
+   <tr>
+    <td><b>expr1 >= expr2</b></td>
+    <td>If <b>expr1</b> is greater than or equal to <b>expr2</b>, 1, else 0</td>
+   </tr>
+
+   <tr>
+    <td><b>(expr)</b></td>
+    <td>Group an expression for precedence</td>
+   </tr>
+
+   <tr>
+    <td><b>-expr</b></td>
+    <td>Negate <b>expr</b></td>
+   </tr>
+
+   <tr>
+    <td><b>!expr</b></td>
+    <td>Logical not of <b>expr</b></td>
+   </tr>
+
+   <tr>
+    <td><b>~expr</b></td>
+    <td>Compliment of <b>expr</b></td>
+   </tr>
+  </table>
+
+<h2>Options</h2><br>
+
+  <table border=0>
+   <tr>
+    <td><b>-f</b></td>
+    <td>Use floating point numbers</td>
+   </tr>
+
+   <tr>
+    <td><b>--help</b></td>
+    <td>Print the help message and exit</td>
+   </tr>
+
+   <tr>
+    <td><b>--version</b></td>
+    <td>Print program version and exit</td>
+   </tr>
+  </table>
+
+<h2>Author</h2><br>
+
+  Brad Proctor
+
+<h2>Reporting Bugs</h2><br>
+
+  Report bugs to <a href=mailto:bugs@plural-os.org>bugs@plural-os.org</a>.
+
+<h2>Copyright</h2><br>
+
+    expr, Copyright (c) 2001-2003 Brad Proctor<br>
+    This is free software, see the source for copying conditions.
+
+<h2>See Also</h2><br>
+
+<a href="bc.html">bc</a>
+
+</body>
+</html>

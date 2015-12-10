@@ -1,0 +1,16 @@
+
+
+Memory Map
+------------------------------------------
+0x00000000 - Base, BIOS
+0x00100000 - Multiboot Header (Will be freed after kernel starts)
+0x00101000 - IDT
+0x00101800 - GDT
+0x00104000 - Page directory
+0x00105000 - First Page Table
+0x00106000 - Second Page Table
+0x00107000 - Startup code (start.S)
+0x00108000 - start 32bit (entry.S)
+
+Memory will be mapped to the virtual address of 0xE0000000.
+

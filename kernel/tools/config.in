@@ -1,0 +1,112 @@
+mainmenu_name "Plural Kernel Configuration"
+
+define_bool CONFIG_X86 y
+define_bool CONFIG_ISA y
+
+mainmenu_option next_comment
+comment 'Processor type and features'
+choice 'Processor family' \
+   "386					CONFIG_I386	\
+    486/Cx486				CONFIG_I486	\
+    586/K5/5x86/6x86/6x86MX		CONFIG_I586	\
+    Pentium				CONFIG_I586TSC	\
+    Pentium-MMX				CONFIG_I586MMX	\
+    Pentium-Pro/Celeron/Pentium-II	CONFIG_I686	\
+    Pentium-III         		CONFIG_IP3	\
+    Pentium-4				CONFIG_IP4	\
+    Athlon/Duron/K7			CONFIG_K7" Pentium
+
+if [ "$CONFIG_I386" = "y" ]; then
+   define_int CPU 3
+else
+   define_bool CONFIG_ALIGN16 y
+   define_bool CONFIG_X86_WP_WORKS_OK y
+   define_bool CONFIG_X86_INVLPG y
+   define_bool CONFIG_X86_BSWAP y
+   define_bool CONFIG_X86_POPAD_OK y
+
+   if [ "$CONFIG_I486" = "y" ]; then
+      define_int CPU 4
+   elif [ "$CONFIG_I586" = "y" ]; then
+      define_int CPU 5
+   elif [ "$CONFIG_I586TSC" = "y" ]; then
+      define_int CPU 5
+      define_bool CONFIG_X86_TSC y
+   elif [ "$CONFIG_I586MMX" = "y" ]; then
+      define_int CPU 5
+      define_bool CONFIG_X86_TSC y
+   elif [ "$CONFIG_I686" = "y" ]; then
+      define_int CPU 6
+      define_bool CONFIG_X86_TSC y
+      define_bool CONFIG_X86_GOOD_APIC y
+   elif [ "$CONFIG_IP3" = "y" -o "$CONFIG_IP4" = "y" ]; then
+      define_int CPU 6
+      define_bool CONFIG_X86_TSC y
+      define_bool CONFIG_X86_GOOD_APIC y
+   elif [ "$CONFIG_K7" = "y" ]; then
+      define_int CPU 7
+      define_bool CONFIG_X86_TSC y
+      define_bool CONFIG_X86_GOOD_APIC y
+     define_bool CONFIG_X86_USE_3DNOW y
+   fi
+fi
+
+bool 'MTRR (Memory Type Range Registers) support' CONFIG_MTRR
+bool 'SMP (Symmetric Multiprocessor) support' CONFIG_SMP
+bool 'MMX (Multimedia extentions) support' CONFIG_MMX
+bool 'MSR (Model Specific Registers) support' CONFIG_MSR
+if [ "$CONFIG_SMP" = "y" ]; then
+   define_bool CONFIG_X86_IO_APIC y
+   define_bool CONFIG_X86_LOCAL_APIC y
+fi
+endmenu
+
+mainmenu_option next_comment
+comment 'Kernel'
+int 'Number of channels' CONFIG_CHANNELS 64
+int 'Number of messages' CONFIG_MESSAGES 128
+int 'Delay Calibration Precision' CONFIG_DELAY_PRECISION 8
+bool 'PCI support' CONFIG_PCI
+if [ "$CONFIG_PCI" = "y" ]; then
+   bool '  PCI device name database' CONFIG_PCI_DATABASE
+fi
+bool 'Use Pascal calling convention' CONFIG_RTD
+bool 'Debugger support' CONFIG_DEBUGGER
+bool 'Network support' CONFIG_NET
+endmenu
+
+mainmenu_option next_comment
+comment 'Scheduler'
+int 'Number of scheduling priorities' CONFIG_PRIORITIES
+endmenu
+
+mainmenu_option next_comment
+comment 'Character Devices'
+bool 'Standard AT Keyboard Support' CONFIG_KEYBOARD
+bool 'Serial port' CONFIG_SERIAL
+endmenu
+
+mainmenu_option next_comment
+comment 'Block Devices'
+bool 'Floppy disk support' CONFIG_FLOPPY
+bool 'IDE disk support' CONFIG_IDE
+endmenu
+
+mainmenu_option next_comment
+comment 'Video'
+choice 'Video mode' \
+   "80x25   CONFIG_VGA80x25 \
+    80x28   CONFIG_VGA80x28 \
+    80x50   CONFIG_VGA80x50" 80x25
+endmenu
+
+if [ "$CONFIG_VGA80x25" = "y" ]; then
+   define_int CONFIG_ROWS 80
+   define_int CONFIG_LINES 25
+elif [ "$CONFIG_VGA80x28" = "y" ]; then
+   define_int CONFIG_ROWS 80
+   define_int CONFIG_LINES 28
+elif [ "$CONFIG_VGA80x50" = "y" ]; then
+   define_int CONFIG_ROWS 80
+   define_int CONFIG_LINES 50
+fi

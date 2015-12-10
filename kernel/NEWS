@@ -1,0 +1,254 @@
+
+0.0.21
+------------------------------------------------------------------------
+        - Added man pages
+        - Some work done on sys/unistd.h
+        - Updated drivers/pci/pci.ids
+
+
+0.0.20
+------------------------------------------------------------------------
+        - Added block-devices.txt, and char-devices.txt to list the
+          contents of the /dev directory.
+        - Other changes, as well, but it's been a while and I don't
+          remember.
+
+
+0.0.19
+------------------------------------------------------------------------
+        - Messaging code fixups
+        - Thread code fixups
+
+
+0.0.18
+------------------------------------------------------------------------
+        - Added code to convert time for ClockGetDate() and ClockGetTime()
+        - Minor code cleanups all over
+        - Updated README
+        - Started ext2 code, added include/ext2.h
+
+
+0.0.17
+------------------------------------------------------------------------
+        - Replaced include/string.h with a modified inline version from Linux
+        - Added include/elf.h
+        - Ok, possibly fixed my last by sending EOI after initializing the
+          PIC.
+
+        - Still having problems with the timer IRQ code not working
+          correctly.  The machine still hangs sometimes at the same
+          'Calibrating delay loop...' spot while waiting for an interrupt.
+
+
+0.0.16
+------------------------------------------------------------------------
+        - Started code for SMP support.
+
+        - Fixed up the pci database stuff.  Borrowed the Linux stuff instead
+          of my own since it's a better.
+
+        - Fixed the ltr(), set_tss_desc(), and new_tss_desc() functions.
+          so that they actually work now.
+ 
+        - The kernel running on real hardware seems to work fine now except
+          that it reports a processor running at 676Mhz when Linux says
+          my processors are running at 1016Mhz. (dual P3-933@1016).
+
+
+0.0.15
+------------------------------------------------------------------------
+        - Fixed up the memory initialization code a bit.  Reordered some
+          things and now the stuff in .init is actually marked as free in
+          the page map after all initialization is completed.
+
+        - I've been noticing that 'make distclean' doesn't always clean up
+          all the files.  Many times there are still .o files lingering and
+          a second 'make distclean' takes care of them.  Don't know what the
+          problem is...
+
+        - Minor cleanups in documents. Updates to README.
+
+        - Minor code cleanups in lib/*
+
+        - The Makefile now creates a gzip compressed kernel.  GRUB can boot
+          kernel images that are compressed with gzip.  Another step added
+          to the build process 'make install'.
+
+        - Finally I'm able to test this thing on real hardware, and
+          unfortunately there is a problem with the irq code somewhere
+          because the machine hangs when at 'Calibrating delay loop...'
+          The machine I am testing this on is an SMP with an APIC.  Maybe
+          that has something to do with it, but I doubt it.  Under bochs
+          the kernel works fine... :(
+
+        - plural-splash.xpm.gz was added and is available for download at
+          at 'www.plural-os.org', this file can be used with GRUB
+          for a pretty background for GRUB's menu interface.  Note that if
+          you are using bochs, it won't work correctly because of the VGA
+          graphics change.  Also, it wasn't displaying correctly, probably
+          GRUB has limitation on number of colors or something like that.
+          The file is there if you'd like to mess with it. I will continue
+          to try to get it staight.
+
+        - I really need figure out how to get some multitasking into this
+          kernel.
+
+
+0.0.14
+------------------------------------------------------------------------
+        - Changed Makefile.def to be able to create .a files as targets.
+          lib/lib.a is one of them.  That way there is no need to worry
+          about dead code getting included in the OS image file.
+          Directories that use .a targets specify the target as ATARGET=
+          instead of TARGET=
+
+        - Reformatted this file to 72 columns.
+
+        - Added COPYING.DOC, The GNU Free Documentation License.  Any
+          documentation that is written and included with this
+          operating sytem kernel package can be released using this
+          license if need be, or the GPL can be used for this as well.
+
+        - Replaced the INSTALL file with README. Which will be a much
+          more thorough document describing how to get Plural running
+          on your system.
+
+        - Started network code
+
+        - Removed the compression code and code for loading high.  The
+          system will always load high from now on. It simplifies
+          things greatly and loading low only causes problems.  If you
+          really don't have enough memory to load the kernel above 1Mb
+          then... buy some more RAM.
+
+        - Kernel now is at 0x100000 instead of virtual address
+          0xE0100000.   This makes the code much simpler and I didn't
+          really see the need of loading the kernel into the high memory
+          area.
+
+        - The kernel now works with GRUB.  A floppy image and
+          instructions for use will be posted on www.plural-os.org in
+          the development section.
+
+        - Put the strings from the PCI device database into .init
+          section so they won't take up memory after the .init section
+          is freed.  Still needs work to build the actual database
+          structure for it though.
+
+
+0.0.13
+------------------------------------------------------------------------
+        This release will not run correctly when the kernel image gets too
+large.  At least it isn't working correctly under bochs.  The compressed
+kernel fails to uncompress properly, and uncompressed kernels give
+errors when booting under bochs, this only shows up when the kernel
+image starts to get large, ???.
+
+        - Updates to debugger code
+        - Updates to syscall code
+        - Code cleanups
+        - Updates to Configure.help, config.in
+        - Put PCI device name database in init memory still needs some
+          work to get all the strings in the init section.
+
+
+0.0.12
+------------------------------------------------------------------------
+        - Updates to keyboard code
+        - Added debugger support
+        - Updates to pci code
+        - Code cleanups
+
+
+0.0.11
+------------------------------------------------------------------------
+        - Updates to memory code
+        - Updates to makefiles
+        - Started pci code
+        - Pascal calling convention is a config option now
+
+
+0.0.10
+------------------------------------------------------------------------
+        - Updates to Configure.help
+        - Updates to memory code
+        - Started scheduling code
+        - Removed posix support, this can be done through a user space
+          library.
+        - Updates to makefiles
+        - Inlined the IRQ code
+        - The kernel now uses the pascal calling convention (gcc -mrtd)
+
+
+0.0.9
+------------------------------------------------------------------------
+        - Updates to Makefile
+        - Better exception handling
+        - Started posix system calls
+        - Added time code
+
+
+0.0.8
+------------------------------------------------------------------------
+        - Updates to config
+        - Added Build numbers
+        - Updates for makefiles
+        - Fixed ISR problem
+        - Updated interrupt code
+        - Orginization updates
+        - Floppy driver is buggy, hacked for now
+
+
+0.0.7
+------------------------------------------------------------------------
+        - Fixed Loadhigh code
+        - Started floppy drive support
+        - Updates for makefiles
+
+
+0.0.6
+------------------------------------------------------------------------
+        - Added loadhigh support
+        - Added minor keyboard support
+        - Added delay loop calibration supprt
+        - Added DMA transfer support
+        - Fixed exception handling code
+
+
+0.0.5
+------------------------------------------------------------------------
+        - Added file copyright headers
+        - Added several new source files
+        - Updates for syscall
+        - Added Configure.help for Menuconfig
+        - Made lxdialog one source file
+
+
+0.0.4
+------------------------------------------------------------------------
+        - Fixes for makefiles
+        - Added thread code
+        - Added some missing spinlocks
+
+
+0.0.3
+------------------------------------------------------------------------
+        - Updates for the makefiles
+        - Bug fixes in startup code
+        - Added code for spinlocks
+        - Added channel code
+
+
+0.0.2
+------------------------------------------------------------------------
+        - Added support for compressed kernels
+        - Updates for exception handling
+        - Updates for memory management
+        - Orginization Updates
+
+
+0.0.1
+------------------------------------------------------------------------
+        - Initial release
+
+

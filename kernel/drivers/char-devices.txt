@@ -1,0 +1,41 @@
+
+        Plural Operating System /dev entries
+
+Major           Minor           Device          Description
+------------------------------------------------------------------------------
+0                                               Reserved
+
+1               0               null            Null device
+1               1               mem             Physical memory access
+1               2               vmem            Virtual memory access
+1               3               zero            Zero device
+1               4               full            Alway full
+1               5               random          Random number generator
+1               6               msg             Writes as kernel messages
+1               7               port            I/O port access
+1               8               tty             Current virtual terminal
+1               9               console         System console
+1               10              beep            PC Speaker BEEP device
+1               11              rtc             Real Time Clock
+1               12              watchdog        Watchdog Timer access
+1               13              msr             Model specific registers
+1               14              pci             PCI config access
+1               15              nvram           Non-volatile RAM access
+1               16              microcode       CPU Microcode access
+1               17              dma             DMA access
+1               18              pmc             Performance monitor counters
+1               19              kbd             Raw Keyboard access
+1               20              trace           Kernel trace info
+1               21              prof            Kernel profiling info
+1               22              stat            Kernel statistics
+1               23..31                          Reserved
+1               32..63          cpu1..cpu31     CPU Info
+
+2               0..511          tty0..tty511    Virtual Terminals
+2               511..1023       ttyS0..ttyS511  UART Serial ports
+
+3               0..511          lp0..lp511      Parellel printers
+
+4               0..511          js0..js511      Joystick
+
+5               0..511          fb0..fb511      Framebuffer access

@@ -1,0 +1,90 @@
+
+0.1.7
+---------------------------------------------------------------------
+        - Added lib/getnum_hex.c, lib/getnum_octal.c
+        - Updates to man pages
+        - uuencode mostly working now
+        - Added support for octal numbers (with 0 prefix) and hex
+          numbers (with 0x or 0X prefix) to the lib/getnum_???.c
+          files.
+        - Replaced all uses of sscanf() to get numbers with the
+          getnum_??? functions.
+        - Fixed a bunch of minor compilation bugs
+        - Added lib/yesno.c
+        - Added renice
+
+0.1.6
+---------------------------------------------------------------------
+        - Added lib/getnum_f.c, lib/getnum_d.c, lib/getnum_ld.c
+        - Updates for man pages
+        - Added csplit, nice
+        - seq is mostly working now
+        - Added lib/getnum_l.c, lib/getnum_ll.c
+        - nl is mostly working now
+        - Started on tests for cmp, and nl
+
+0.1.5
+---------------------------------------------------------------------
+        - Updates for man pages
+        - Updates for many utilities.
+        - Added seq, factor
+
+
+0.1.4
+---------------------------------------------------------------------
+        - Updates for man pages
+        - Tons of small fixes in the utilities, too many to list.
+
+
+0.1.3
+---------------------------------------------------------------------
+        - Added domainname
+        - Fixed hostid and hostname
+        - date mostly works now
+        - id sort of works now
+        - Updates for many --help displays
+        - logger works now
+        - Updates for man pages
+        - Fixed bug in cal so that the current month is printed if
+          no month and year are specified.
+
+
+0.1.2
+---------------------------------------------------------------------
+        - Added terror and warning to lib.a
+        - mesg works now
+        - Updated pwd
+        - Added -e option to echo for control character interpretation
+          and updated man pages for it.
+        - Updates for man pages
+        - Added the GNU Free Documentation License to the man pages
+        - Changed all files so that long_option is now long-option,
+          also changed VERSION_STRING to VERSION.
+        - Updates to many programs for error reporting
+        - Cleaned up some bugs with files being left open
+        - touch is working, but needs some more work.  The -t option
+          does not correctly parse the date/time properly.
+
+
+0.1.1
+---------------------------------------------------------------------
+        - Added xfopen to the library, easier file opening and display
+          better, uniform messages if there is an error.
+        - Fixed a bug in cmp where if both files where the same, the
+          program goes into an endless loop.  Also added -i option
+          to allow for ranges to be compared instead of the entire
+          file.
+        - Updates for sleep, head
+        - 'kill' is working now
+        - Some work done one 'tail' and a little bit done on several
+          other of the utilities
+        - Updates for man pages
+        - Added 'no' utility
+
+
+0.1.0
+---------------------------------------------------------------------
+        - Initial release, this is the same as 0.0.21 with only
+          changes to the version number and creating this new file.
+          The NEWS file for the previous versions is now in NEWS-0.0
+

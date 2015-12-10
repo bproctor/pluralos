@@ -1,0 +1,19 @@
+#!/bin/sh
+
+./$1 > ./tmp-data1
+echo $2 > ./tmp-data2
+
+if `cmp -s ./tmp-data1 ./tmp-data2`; then
+	if [ $VERBOSE = 1 ]; then
+		echo "$1 succeded"
+	fi
+	CODE=0
+else
+	if [ $VERBOSE = 1 ]; then
+		echo "$1 failed <correct: `cat ./tmp-data2`>"
+	fi
+	CODE=1
+fi
+
+rm -f ./tmp-data1 ./tmp-data2
+exit $CODE

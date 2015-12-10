@@ -1,0 +1,6 @@
+
+Install instructions for libc-0.0.x
+-----------------------------------
+
+1. Type `make'
+2. Type `make install'

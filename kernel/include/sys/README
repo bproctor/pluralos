@@ -1,0 +1,4 @@
+
+The files in this directory are user accessable.  If portions
+of a header are not to be seen in user space, then they are
+blocked out with __KERNEL__ preprocessor directives.

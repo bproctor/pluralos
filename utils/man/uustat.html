@@ -1,0 +1,88 @@
+
+<html>
+<head>
+ <title>uustat</title>
+</head>
+<body>
+
+<h3><center>uustat</center></h3>
+
+<h2>Name</h2><br>
+
+  uustat - uucp status inquery and job control
+
+<h2>Synopsis</h2><br>
+
+  uustat long-option<br>
+  uustat [-q | -k jobid | -r jobid]<br>
+  uustat [-s system][-u user]
+
+<h2>Description</h2><br>
+
+  The <b>uustat</b> utility displays the status, or cancels a previous uucp
+  request.  It can also provide general status on uucp connections to other
+  systems.
+
+  <p>
+  If no option is given, uustat will write the status of all uucp requests
+  issued by the current user to the standard output.
+
+<h2>Options</h2><br>
+
+  <table border=0>
+   <tr>
+    <td><b>-k jobid</b></td>
+    <td>Kill the uucp request with job identifier <b>jobid</b>.
+   </tr>
+
+   <tr>
+    <td><b>-q</b></td>
+    <td>Print the jobs queued for each machine</td>
+   </tr>
+
+   <tr>
+    <td><b>-r jobid</b></td>
+    <td>Rejuvenate <b>jobid</b>.  This changes the modification time of files
+        associated with <b>jobid</b> to the current time so that the cleanup
+        program does not delete the job until the jobs identification time
+        reaches the limit imposed by the program.</td>
+   </tr>
+
+   <tr>
+    <td><b>-s system</b></td>
+    <td>Print the status of all uucp requests for remote system <b>system</b></td>
+   </tr>
+
+   <tr>
+    <td><b>-u user</b></td>
+    <td>Print the status of all uucp requests issued by <b>user</b></td>
+   </tr>
+
+   <tr>
+    <td><b>--help</b></td>
+    <td>Print the help message and exit</td>
+   </tr>
+
+   <tr>
+    <td><b>--version</b></td>
+    <td>Print program version and exit</td>
+   </tr>
+  </table>
+
+<h2>Author</h2><br>
+
+  Brad Proctor
+
+<h2>Reporting Bugs</h2><br>
+
+  Report bugs to <a href=mailto:bugs@plural-os.org>bugs@plural-os.org</a>.
+
+<h2>Copyright</h2><br>
+
+    uustat, Copyright (c) 2003 Brad Proctor<br>
+    This is free software, see the source for copying conditions.
+
+<h2>See Also</h2><br>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+#
+# inittab
+#
+
+#
+# Runlevels:
+#
+# 0: Halt
+# 1: Single user
+# 2: Multiuser without NFS
+# 3: Full multiuser
+# 4: unused
+# 5: X11
+# 6: reboot
+#
+
+id:3:initdefault:
+
+si::sysinit:/etc/rc.d/rc.sysinit
+
+l0:0:wait:/etc/rc.d/rc 0
+l1:1:wait:/etc/rc.d/rc 1
+l2:2:wait:/etc/rc.d/rc 2
+l3:3:wait:/etc/rc.d/rc 3
+l4:4:wait:/etc/rc.d/rc 4
+l5:5:wait:/etc/rc.d/rc 5
+l6:6:wait:/etc/rc.d/rc 6
+
+ud::once:/sbin/update
+
+ca::ctrlaltdel:/sbin/shutdown -t3 -r now
+
+1:2345:respawn:/sbin/getty tty1
+2:2345:respawn:/sbin/getty tty2
+3:2345:respawn:/sbin/getty tty3
+4:2345:respawn:/sbin/getty tty4
+5:2345:respawn:/sbin/getty tty5
+6:2345:respawn:/sbin/getty tty6

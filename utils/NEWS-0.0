@@ -1,0 +1,218 @@
+
+0.0.21
+---------------------------------------------------------------------
+        - A few minor bugs corrected
+        - Lots of work on the man pages
+        - The utils package is comming along nicely now.  After this
+          release, the 0.1 series will begin.  Much work need to be
+          done for this release to get there however. All utilities
+          that are going in this package have been started, and many
+          are working well.  Several of the man pages are done.
+
+
+0.0.20
+---------------------------------------------------------------------
+        - link is working now
+        - unlink is working now
+        - Got some work done on tabs, it's getting close to done.
+        - Updates for expand, head, and unexpand, umount, who
+        - Updates for the man pages
+
+
+0.0.19
+---------------------------------------------------------------------
+        - Updates for the man pages
+        - Added iconv, link, pathchk, tabs, times, uname
+        - uname is now working
+        - Added uucp, xargs, zcat, uux, uustat, unlink, write, talk,
+          tput, fuser, gencat, getconf, ipcrm, ipcs, locale,
+          localedef, lp, mailx, mesg, newgrp, pax, trap, logger, ed,
+          ex, crontab, vi, qalter, qdel, qhold, qmove, qmsg, qrerun,
+          qrls, qselect, qsig, qstat, qsub.  This should be all the
+          utilities that form the utils package...  For real this
+          time.  I think.
+
+
+0.0.18
+---------------------------------------------------------------------
+        - Minor updates to a lot of files
+        - hostname is working, I think
+        - asa is almost done, not sure on exactly how it is suppost
+          to work though.
+        - Got more working, still needs some work though.  Like
+          detecting how many lines are on the screen instead of just
+          using the default of 24.
+        - Cleaned up some code
+        - Got some work done on who, and touch.  Incomplete though.
+        - Misc stuff
+        - Updates for the man pages
+        - Added encrypt, decrypt.  Ok, maybe there are still a few
+          programs to add...
+        - Some work done on bc, and tee
+
+
+0.0.17
+---------------------------------------------------------------------
+        - Fixed Makefile for better install method and updated
+          INSTALL accordingly
+        - tac is sort of working now.  It has some problems which
+          will be corrected soon.
+        - Added cp, hostname, date, uncompress, more, mount, umount,
+          find, grep, kill, md5sum, nl, patch, ps, strings, tail,
+          tar, touch, tsort, who, users, sed, shred, uniq, uudecode,
+          uuencode.  All programs that form utils package have now
+          been added.  Can't say the new ones do much of anything
+          at the moment, but at least they have been started.
+
+
+0.0.16
+---------------------------------------------------------------------
+        - Fixed sort to support multiple files.
+        - Added asa, bc, colon, dd, df, diff, du, file, id
+        - Fixed cksum
+
+
+0.0.15
+---------------------------------------------------------------------
+        - Fixed problems with cut, still need to implement -f option
+        - Fixed problems with comm
+        - Fixed cmp reporting wrong file for EOF
+        - Fixed sum, added -b option for variable block sizes, 
+          added -r option for using the BSD algorithm
+        - Change the way the test directory works, it is setup quite
+          nicely, but it needs some work, for some reason I get seg faults
+          when running the tests in this way.  The programs that have tests
+          written currently pass all tests, regardless of what 'make test'
+          might tell you...  Need to work on this more...
+        - Got some work done on sort.  It will sort now, and a few option
+          have been implemented, but that's it for now.  Also needs work to
+          prevent buffer overflow, memory leaks, etc.
+        - Fixed up some --help displays
+
+
+0.0.14
+---------------------------------------------------------------------
+        - Added TODO file to keep track of what needs to be done to
+          the utilities and the status of the utilities.
+        - Fixed rmdir to work with '-v' and '-p' options
+        - Added xmalloc(), xrealloc(), and xcalloc() to utils.h
+        - Added test directory and started scripts to test the utilities
+        - Fixed problems with uptime
+        - Fixed problems with basename
+        - Fixed problems with dirname
+
+
+0.0.13
+---------------------------------------------------------------------
+        - Modified expr to use 'long long int' instead of 'long int'
+          for basic integer math
+        - Modified expr to support floating point numbers with the
+          '-f' flag
+        - Modified head to work with bytes instead of just lines
+        - Modified rot13, cut, fold, and sum to work with '-' for stdin
+        - Added join
+        - Added pr
+        - Added paste
+        - Added stty
+        - Added su
+        - Added tac
+
+
+0.0.12
+---------------------------------------------------------------------
+        - Added tr
+        - Updates to the man files
+        - Fixed cat so that '-' for stdin works correctly
+        - Fixed echo to work with option '-n'
+        - Fixed sync so that it ignores invalid options and syncs
+        - Fixed false to exit successful on --help or --version
+          otherwise exits failure
+        - Fixed whoami so that --help & --version exit properly
+
+
+0.0.11
+---------------------------------------------------------------------
+        - Added printf (needs work)
+        - Added pwd
+        - Added punzip (which just calls pzip)
+        - Added sleep
+        - Added tee
+        - Added hostid
+        - Added uptime
+        - Updated install instructions
+        - Added chroot
+        - Added lib directory to reuse a little code throughout
+          programs
+
+
+0.0.10
+---------------------------------------------------------------------
+        - Got cal working properly, corrected for the Reformation
+          of 1752.  See source for an explanation.
+        - Added pzip (just started)
+        - Added rot13
+        - Fixed head to work with stdin
+        - Added fold
+
+0.0.9
+---------------------------------------------------------------------
+        - Updates to mknod, mkfifo, mkdir, and cal
+        - Added the null (because of patent issues) utility compress
+        - Added cut
+        - Added dirname
+        - Added expr
+
+
+0.0.8
+---------------------------------------------------------------------
+        -  A year since I've worked on this stuff, updated the
+           version cause I don't know what's going on anymore.
+
+
+0.0.7
+---------------------------------------------------------------------
+        - CVS Snapshot
+
+
+0.0.6
+---------------------------------------------------------------------
+        - Updates to makefile
+        - Updates to wc
+        - Added prezip, but segfaulting :(
+
+
+0.0.5
+---------------------------------------------------------------------
+        - Added man directory
+        - Started the html manuals
+        - Updates to chgrp
+        - Added cal
+
+
+0.0.4
+---------------------------------------------------------------------
+        - Added whoami
+        - Added logname
+        - Code cleanups
+        - Fixed cat to work with stdin
+
+
+0.0.3
+---------------------------------------------------------------------
+        - Code cleanups
+        - Removed extra versioning
+        - Corrected some ANSI violations
+        - Fixed basename
+
+
+0.0.2
+---------------------------------------------------------------------
+        - Moved files into src/ directory
+        - Made rm functional
+        - Updates to false, true, yes, wc
+
+
+0.1 (Now called 0.0.1)
+---------------------------------------------------------------------
+        - Initial release
+

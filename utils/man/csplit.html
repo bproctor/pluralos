@@ -1,0 +1,81 @@
+
+<html>
+<head>
+ <title>csplit</title>
+</head>
+<body>
+
+<h3><center>csplit</center></h3>
+
+<h2>Name</h2><br>
+
+  csplit - split files base on context
+
+<h2>Synopsis</h2><br>
+
+  csplit long-option<br>
+  csplit [-ks][-f prefix][-n num] file arg1 ... argn
+
+<h2>Description</h2><br>
+
+  The <b>csplit</b> utility read from <b>file</b> and writes all or part of
+  the file into the other files specified by the <b>arg</b> operands, the
+  writes the sizes of the files.  If an error occurs, the created files are
+  deleted.
+
+<h2>Options</h2><br>
+
+  <table border=0>
+   <tr>
+    <td><b>-f prefix</b></td>
+    <td>Set the prefix for the file names to be created to <b>prefix</b>. 
+        The default prefix is <b>xx</b>, which would created the files
+        <b>xx00</b>, <b>xx01</b>, ... <b>xxnn</b></td>
+   </tr>
+
+   <tr>
+    <td><b>-k</b></td>
+    <td>Leave created files intact if an error occurs</td>
+   </tr>
+
+   <tr>
+    <td><b>-n num</b></td>
+    <td>Use <b>num</b> digits to create file names</td>
+   </tr>
+
+   <tr>
+    <td><b>-s</b></td>
+    <td>Suppress output of file sizes</td>
+   </tr>
+
+   <tr>
+    <td><b>--help</b></td>
+    <td>Print the help message and exit</td>
+   </tr>
+ 
+   <tr>
+    <td><b>--version</b></td>
+    <td>Print program version and exit</td>
+   </tr>
+  </table>
+
+<h2>Author</h2><br>
+
+  Brad Proctor
+
+<h2>Reporting Bugs</h2><br>
+
+  Report bugs to <a href=mailto:bugs@plural-os.org>bugs@plural-os.org</a>.
+
+<h2>Copyright</h2><br>
+
+    csplit, Copyright (c) 2003 Brad Proctor<br>
+    This is free software, see the source for copying conditions.
+
+<h2>See Also</h2><br>
+
+<a href="sed.html">sed</a>
+<a href="split.html">split</a>
+
+</body>
+</html>

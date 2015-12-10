@@ -1,0 +1,7 @@
+
+$(TARGET) : $(addsuffix .o, $(basename $(SRC)))
+	$(CC) $(LDFLAGS) -o $@ $^
+	$(OBJCOPY) -R .note -R .comment -S $@
+
+%.o : %.c
+	$(CC) -c $(CFLAGS) -o $@ $<

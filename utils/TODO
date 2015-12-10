@@ -1,0 +1,273 @@
+
+
+
+
+                                ------------
+                                Things To Do
+                                ------------
+
+
+echo    - Accourding to the X/Open V3 standard, echo does not except any
+          options.  There should be a way to allow options to the echo
+          command if an environment variable is set or something.  This
+          needs some thought.
+
+fold    - Folding lines with this utility is nearly useless, find a way to
+          make this utility better with new options, or possibly create a
+          new utility that formats the lines better than just sticking a 
+          newline at the end.
+
+tee     - Need to add the -a and -i options
+
+cal     - Still not printing proper calenders.  The start day for a month is
+          not always correct.  Try January, 2003.
+
+newgrp  - Need to add ability to ask for a password if necessary to change
+          the group.
+
+date    - Need to add ability to set the time.
+        - Need to fix -u so that the UTC time is corrected for.
+
+seq     - Need to add the -f option so that formats are printed correctly.
+
+------------------------------------------------------------------------------
+Possible Additions
+
+replace - Similar to 'tr' or 'expand'/'unexpand' but replaces the file
+          instead of outputing to a new one.
+
+
+
+------------------------------------------------------------------------------
+
+Status of utilities
+-------------------
+
+- If any of the utilities marked as 'working' does not function correctly,
+  please submit a bug report to <bugs@plural-os.org>.  Check that there is
+  not already a comment listed here about your bug before submitting however.
+
+- If a utility is marked as 'started' it means that some work has been
+  done, but by no means is complete.
+
+- If a utility is marked as part of another package, check that package
+  for it's status.
+
+- Utilities that have not been marked, have not yet had any work on them at
+  all.
+
+- SCCS will eventually become it's own package.
+
+
+Program                 Status
+------------------------------------------------------------------------------
+addgroup                part of the base package
+adduser                 part of the base package
+admin                   SCCS
+alias                   part of the sh package
+ar                      part of the devtools package
+asa                     started
+at                      part of the sh package
+awk                     part of the devtools package
+basename                working
+batch                   part of the sh package
+bc                      started
+break                   part of the sh package
+c89                     part of the cc package
+c99                     part of the cc package
+cal                     working
+                        if no month or year is specified 'cal' should print
+                        the calender for the current month and year
+cat                     working
+cc                      part of the cc package
+cd                      part of the sh package
+cflow                   part of the cc package
+chgrp                   working
+chmod                   working
+chown                   started
+chroot                  working
+cksum                   working
+cmp                     working
+colon                   working
+comm                    working
+command                 part of the sh package
+compress                working
+continue                part of the sh package
+cp                      started
+crontab                 started
+csplit                  started
+ctags                   part of the cc package
+cut                     working
+                        missing the '-f' option
+cxref                   part of the cc package
+date                    started
+dd                      started
+decrypt                 started
+delta                   SCCS
+df                      started
+diff                    started
+dirname                 working
+domainname              working
+dot                     part of the sh package
+du                      started
+echo                    working
+ed                      started
+encrypt                 started
+env                     part of the sh package
+eval                    part of the sh package
+ex                      started
+exec                    part of the sh package
+exit                    part of the sh package
+expand                  working
+expr                    working
+export                  part of the sh package
+factor                  started
+false                   working
+fc                      part of the sh package
+fg                      part of the sh package
+file                    started
+find                    started
+fmt                     started
+fold                    working
+fort77                  part of the devtools package
+fuser                   started
+gencat                  started
+get                     SCCS
+getconf                 started
+getopts                 part of the sh package
+getty                   part of the base package
+grep                    started
+hash                    part of the sh package
+head                    working
+hostid                  working
+hostname                working
+iconv                   started
+id                      started
+init                    part of the base package
+ipcrm                   started
+ipcs                    started
+jobs                    part of the sh package
+join                    started
+kill                    working
+lex                     part of the devtools package
+link                    working
+ln                      working
+locale                  started
+localedef               started
+logger                  started
+logname                 working
+lp                      started
+ls                      started
+m4                      part of the devtools package
+mailx                   started
+make                    part of the devtools package
+man                     part of the man package
+md5sum                  started
+mesg                    working
+mkdir                   working
+mkfifo                  working
+mknod                   working
+more                    started
+mount                   started
+mv                      started
+newgrp                  started
+nice                    started
+nl                      started
+nm                      part of the devtools package
+no                      working
+nohup                   part of the sh package
+od                      working
+passwd                  part of the base package
+paste                   started
+patch                   started
+pathchk                 started
+pax                     started
+pr                      started
+prezip                  started
+printf                  started
+prs                     SCCS
+ps                      started
+punzip                  started
+pwd                     working
+pzip                    started
+qalter                  started
+qdel                    started
+qhold                   started
+qmove                   started
+qmsg                    started
+qrerun                  started
+qrls                    started
+qselect                 started
+qsig                    started
+qstat                   started
+qsub                    started
+read                    part of the sh package
+readonly                part of the sh package
+renice                  part of the sh package
+return                  part of the sh package
+rm                      working
+rmdel                   SCCS
+rmdir                   working
+rot13                   working
+sact                    SCCS
+sccs                    SCCS
+sed                     started
+seq                     started
+set                     part of the sh package
+sh                      part of the sh package
+shift                   part of the sh package
+shred                   started
+sleep                   working
+sort                    started
+split                   working
+strings                 started
+strip                   part of the devtools package
+stty                    started
+tabs                    started
+tac                     started
+tail                    started
+talk                    started
+tar                     started
+tee                     working
+test                    part of the sh package
+time                    part of the sh package
+times                   started
+touch                   started
+tput                    started
+tr                      started
+trap                    started
+true                    working
+tsort                   started
+tty                     working
+type                    part of the sh package
+ulimit                  part of the sh package
+umask                   part of the sh package
+umount                  started
+unalias                 part of the sh package
+uname                   working
+uncompress              working
+unexpand                working
+unget                   SCCS
+uniq                    started
+unlink                  working
+unset                   part of the sh package
+uptime                  working
+users                   started
+uucp                    started
+uudecode                started
+uuencode                started
+uustat                  started
+uux                     started
+val                     SCCS
+vi                      started
+wc                      working
+what                    SCCS
+who                     started
+whoami                  working
+write                   started
+xargs                   started
+yacc                    part of the devtools package
+yes                     working
+zcat                    started
+------------------------------------------------------------------------------
+

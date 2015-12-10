@@ -1,0 +1,77 @@
+
+#
+#  Makefile.def
+#  Copyright (c) 2001-2003 Brad Proctor
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+#
+
+#
+# $Id: Makefile.def,v 1.8 2003/01/19 19:26:14 fredlie Exp $
+#
+
+ifeq ($(wildcard $(TOP)/.config), $(TOP)/.config)
+include $(TOP)/.config
+endif
+
+ifndef VARS
+ifeq ($(wildcard $(TOP)/Makefile.inc), $(TOP)/Makefile.inc)
+include $(TOP)/Makefile.inc
+export VARS=1
+endif
+endif
+
+
+CFLAGS += -I$(TOP)/include
+
+%.o : %.c
+	$(CC) -c $(CFLAGS) -o $@ $<
+
+%.o : %.S
+	$(CC) -c $(CFLAGS) -o $@ $<
+
+%.o : %.s
+	$(CC) -c $(CFLAGS) -o $@ $<
+
+ifdef DIR_TARGET
+$(DIR_TARGET) : dummy
+	rm -f $(DIR_TARGET)
+ifdef DIRS
+	for i in $(DIRS); do $(MAKE) -C $$i; done
+	$(LD) -r -o $@ $(join $(DIRS),$(addprefix /,$(addsuffix .o, $(DIRS))))
+else
+	$(AR) rcs $@ $^
+endif
+else
+$(TARGET) : $(addsuffix .o, $(basename $(SRC)))
+	$(LD) -r -o $@ $^
+
+$(ATARGET) : $(addsuffix .o, $(basename $(SRC)))
+	$(AR) rcs $@ $^
+endif
+
+.PHONY: mkdep
+mkdep:
+ifdef DIR_TARGET
+	for i in $(DIRS); do $(MAKE) -C $$i mkdep; done
+else
+	@$(TOP)/tools/dep -I$(TOP)/include/ $(wildcard *.c *.S) > .depend
+endif
+
+ifeq ($(wildcard .depend), .depend)
+include .depend
+endif
+
+dummy:
